@@ -1,9 +1,11 @@
 # Rotate AWS Access token stored in Github Repository secrets
 
-Version for rotate organization secret, forked from [github-action-rotate-aws-secrets](https://github.com/kneemaa/github-action-rotate-aws-secrets)
+Version for rotate organization secret, forked from [kneemaa/github-action-rotate-aws-secrets](https://github.com/kneemaa/github-action-rotate-aws-secrets)
+
+#### Maintainer Dmitry Teikovtsev <teikovtsev.dmitry@pdffiller.team>
 
 ## Note:
-- secret **visibility** only **private** - Private repositories in an organization can access. May be later add **all** and **selected**
+- secret **visibility** only **private** - Private repositories in an organization can access. May be later add visibility for **all** and **selected** variant
 
 ## Environment Variables
 #### AWS_ACCESS_KEY_ID
@@ -52,7 +54,7 @@ Version for rotate organization secret, forked from [github-action-rotate-aws-se
 ```
 on:
   schedule:
-    - cron: '* 13 * * 1' 
+    - cron: '* 13 * * 1'
 
 jobs:
   rotate:
@@ -62,7 +64,7 @@ jobs:
       - uses: actions/checkout@v2.0.0
 
       - name: rotate aws keys
-        uses: airslate-ops/github-org-action-rotate-aws-secrets@v0.1.0
+        uses: airslate-ops/github-org-action-rotate-aws-secrets@v0.1.2
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.access_key_name }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.secret_key_name }}
@@ -85,7 +87,7 @@ jobs:
       - uses: actions/checkout@v2.0.0
 
       - name: rotate aws keys
-        uses: airslate-ops/github-org-action-rotate-aws-secrets@v0.1.0
+        uses: airslate-ops/github-org-action-rotate-aws-secrets@v0.1.2
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.access_key_name }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.secret_key_name }}

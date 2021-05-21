@@ -1,6 +1,6 @@
-name: 'Rotate AWS Access Keys'
-author: 'Nema Darban <nema.darban@gmail.com>'
-description: Github action that rotates the iam user tokens on a schedule
+name: 'Rotate AWS Access Keys stored in github organization'
+author: 'Dmitry Teikovtsev <teikovtsev.dmitry@pdffiller.team>'
+description: Github action that rotates the iam user credentials stored in github organization on a schedule
 runs:
     using: 'docker'
     image: 'Dockerfile'
