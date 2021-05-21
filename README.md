@@ -9,22 +9,27 @@ Version for rotate organization secret, forked from [github-action-rotate-aws-se
 #### AWS_ACCESS_KEY_ID
 - Required: ***True***
 - Description: Access Key ID to authenticate with AWS. You can use `${{secrets.ACCESS_KEY_ID}}`
+- Should be in organization secrets
 
 #### AWS_SECRET_ACCESS_KEY
 - Required: ***True***
 - Description: Secret Access Key ID to authenticate with AWS. You can use `${{secrets.SECRET_ACCESS_KEY_ID}}`
+- Should be in organization secrets
 
 #### AWS_SESSION_TOKEN
 - Required: ***False***
 - Description: Session Token for the current AWS session. Only required if you assume a role first.
+- Should be in organization secrets
 
 #### IAM_USERNAME
 - Required: ***False***
 - Description: Name of IAM user being rotated, if not set the username which is used in the AWS credentials is used
+- Can be in repository secrets or in organization secrets or plaintext
 
 #### PERSONAL_ACCESS_TOKEN
 - Required: ***True***
 - Description: Github Token with **Repo Admin** access of the target repo. As of 4/16/2020 `${{github.token}}` does not have permission to query the Secrets API. The existing env var GITHUB_TOKEN which is added automatically to all runs does not have the access secrets.
+- Can be in repository secrets or in organization secrets
 
 #### OWNER_ORGANIZATION
 - Required: ***True***
@@ -34,11 +39,13 @@ Version for rotate organization secret, forked from [github-action-rotate-aws-se
 - Required: ***False***
 - Default: `access_key_id`
 - Description: Name of the secret for the Access Key ID. Setting this overrides the default.
+- Can be in repository secrets or in organization secrets or plaintext
 
 #### GITHUB_SECRET_KEY_NAME
 - Required: ***False***
 - Default: `secret_key_id`
 - Description: Name of the secret for the Secret Access Key ID. Setting this overrides the default.
+- Can be in repository secrets or in organization secrets or plaintext
 
 # Example
 ## Rotation every monday at 13:00 UTC
