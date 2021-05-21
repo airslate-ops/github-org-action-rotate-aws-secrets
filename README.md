@@ -52,7 +52,7 @@ jobs:
       - uses: actions/checkout@v2.0.0
 
       - name: rotate aws keys
-        uses: airslate-ops/github-action-rotate-aws-secrets@v0.1.0
+        uses: airslate-ops/github-org-action-rotate-aws-secrets@v0.1.0
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.access_key_name }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.secret_key_name }}
@@ -75,7 +75,7 @@ jobs:
       - uses: actions/checkout@v2.0.0
 
       - name: rotate aws keys
-        uses: airslate-ops/github-action-rotate-aws-secrets@v0.1.0
+        uses: airslate-ops/github-org-action-rotate-aws-secrets@v0.1.0
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.access_key_name }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.secret_key_name }}
