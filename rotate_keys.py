@@ -136,7 +136,8 @@ def upload_secret(owner_org,key_name,encrypted_value,pub_key_id,github_token):
         f'https://api.github.com/orgs/{owner_org}/actions/secrets/{key_name}',
         json={
             'encrypted_value': encrypted_value,
-            'key_id': pub_key_id
+            'key_id': pub_key_id,
+            'visibility': f"private"
         },
         headers={'Authorization': f"token {github_token}"}
     )
