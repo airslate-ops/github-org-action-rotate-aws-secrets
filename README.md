@@ -1,6 +1,9 @@
 # Rotate AWS Access token stored in Github Repository secrets
 
-Version for rotate organisation secret, forked from [github-action-rotate-aws-secrets](https://github.com/kneemaa/github-action-rotate-aws-secrets)
+Version for rotate organization secret, forked from [github-action-rotate-aws-secrets](https://github.com/kneemaa/github-action-rotate-aws-secrets)
+
+## Note:
+- secret **visibility** only **private** - Private repositories in an organization can access. May be later add **all** and **selected**
 
 ## Environment Variables
 #### AWS_ACCESS_KEY_ID
